@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamming WEB</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/img/logo.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            scroll-behavior: smooth;
+        }
+        .container{
+            font-family: Arial, Helvetica, sans-serif;
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            
+        }
+        header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 40px;
+            z-index: 999;
+            background-color: rgba(73, 71, 71, 0.495);
+            /* backdrop-filter: blur(10px); */
+        }
+        .head-left{
+            display: flex;
+            align-items: center;
+
+        }
+        .head-left a{
+            text-decoration: none;
+            color: rgb(67, 66, 66);
+        }
+        .head-left a:hover{
+            color: rgb(0, 0, 0);
+        }
+        .head-left img{
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+        }
+        .contact-section img{
+            transition: 0.5s;
+        }
+        .contact-section img:hover{
+            
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+        .head-left button{
+            border: none;
+            padding: 10px 40px;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor:pointer;
+            transition: 0.3s;
+        }
+        .head-left button:hover{
+            opacity: 0.7;
+        }
+        .head-right{
+            display: flex;
+        }
+        .head-right a{
+            text-decoration: none;
+            padding-left: 25px;
+            color: aliceblue;
+            font-size: 15px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .head-right a:hover{
+            text-decoration: underline;
+            background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #0099ff, #4acfee);
+            background-size: 200%;
+            background-size: text;
+            -webkit-background-clip:text ;
+            -webkit-text-fill-color: transparent;
+            animation: animate-gradient 2,5s linear infinite;
+            
+        }
+        .hero-section{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero-vid{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .hero-video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-info{
+            z-index: 0;
+            position: absolute;
+            top: 110px;
+            left: 50px;
+        }
+        .hero-info h1{
+            font-size: 120px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .hero-info p{
+            font-size: 20px;
+            color: aliceblue;
+            max-width: 210px;
+        }
+        .hero-info button{
+            background-color: #edff66;
+            border: 2px solid #edff66;
+            padding: 10px 40px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: black;
+            transition: 0.3s;
+            
+        }
+        .hero-info button:hover{
+            background-color: transparent;
+            color: aliceblue;
+            box-shadow: 0 0 15px #edff66;
+        }
+        .hero-section .gaming-text{
+            font-size: 150px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin: 0;
+            position: absolute;
+            right: 40px;
+            bottom: 30px;
+        
+        }
+        .next-btn{
+            width: 200px;
+            height: 200px;
+            background-color: #676764;
+            position: absolute;
+            left: 45%;
+            bottom: 45%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 100;
+            opacity: 0;
+            transition: 1s;
+            clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+
+        }
+        .footer{
+            height: 300px;
+            width: 100%;
+            background-color: #191919b4;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .link{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .link a i{
+            margin-left: 30px;
+            transition: 0.5s;
+            font-size: 50px;
+        }
+        .link a i:hover{
+            transform: scale(1.4);
+            transition: 0.5s;
+            background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #0099ff, #4acfee);
+            background-size: 200%;
+            background-size: text;
+            -webkit-background-clip:text ;
+            -webkit-text-fill-color: transparent;
+            animation: animate-gradient 2,5s linear infinite;
+        }
+        .next-btn:hover{
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+            box-shadow: 0 0 15px rgba(121, 120, 118, 0.859);
+            background-color: #edff66ad;
+            transition: 1s;
+            clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+        }
+        .about-section{
+            width: 100%;
+            height: 100%;
+            margin-top: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color:white;
+        }
+        
+        .about-section p{
+            font-size: 12px;
+        }
+        .about-section h1{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 900;
+            font-size: 100px;
+            max-width: 1140px;
+            text-align: center;
+            margin: 25px 0;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #0099ff, #4acfee);
+            background-size: 200%;
+            background-size: text;
+            -webkit-background-clip:text ;
+            -webkit-text-fill-color: transparent;
+            animation: animate-gradient 2,5s linear infinite;
+        }
+        @keyframes animate-gradient{
+            to{
+                background-position: 200%;
+            }
+        }
+        .about-section h4{
+            margin-top: 50px;
+            margin-bottom: 0;
+        }
+        .about-section h5{
+            margin-top: 5px;
+            color: gray;
+            max-width: 420px;
+            text-align: center;
+            line-height: 25px;
+        }
+        .info-section{
+            display: grid;
+            flex-direction: column;
+            position: relative;
+            width: 80%;
+            margin-top: 100px;
+        }
+        .about-section h3{
+            margin-bottom: 0;
+
+        }
+        .about-section p{
+            margin-top: 5px;
+            color: gray;
+            max-width: 400px;
+            line-height: 25px;
+        }
+        /* .into-card{
+            display:grid;
+            grid-template-columns: auto auto;
+            gap: 20px;
+            width: 100%;
+            height: 100%;
+            margin-top: 30px;
+        }
+        .card{
+            position: relative;
+            width: auto;
+            height: 40vh;
+            overflow: hidden;
+            border: 1px solid  gray;
+            border-radius: 20px;
+            transition: 0.5s;
+        }
+        .card h1{
+            position: absolute;
+            margin: 0;
+            top: 10px;
+            left: 5%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 60px;
+            z-index: 1;
+            background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #0099ff, #4acfee);
+            background-size: 200%;
+            background-size: text;
+            -webkit-background-clip:text ;
+            -webkit-text-fill-color: transparent;
+            animation: animate-gradient 2,5s linear infinite;
+            max-width: 250px;
+        }
+        .card p{
+            position: absolute;
+            top: 80px;
+            left: 5%;
+            z-index: 1;
+            max-width: 250px;
+            color: lightgray;
+        }
+        .card video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card button{
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            padding: 10px 25px;
+            border : 1px solid gray;
+            background-color: rgba(0, 0, 0, 0.993);
+            color: gray;
+            border-radius: 20px;
+            box-shadow: 0 0 5px lightgray;
+        }
+        .card button:hover{
+            box-shadow: 0 0 15px lightgray;
+            opacity: 0.7;
+        }
+        .card:hover{
+            box-shadow: 0 0 15px white;
+        }*/
+        .info-card .card:first-child {
+            grid-column: span 2;
+            height: 220px; /* big card */
+        }
+        .card:nth-child(2){
+            grid-row: span 2;
+            height: 83vh;
+        } 
+
+        .info-card {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* left column bigger */
+            grid-auto-rows: 350px; /* base height */
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Large card on the left */
+        .info-card .card:first-child {
+            grid-row: span 2;   /* tall */
+            height: auto;
+        }
+
+        /* All cards */
+        .card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(20, 20, 20, 0.9);
+            transition: 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+
+        .card video,
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(70%);
+            transition: 0.4s ease;
+        }
+
+        .card:hover video,
+        .card:hover img {
+            filter: brightness(100%);
+        }
+
+        .card h1 {
+            position: absolute;
+            top: 0px;
+            left: 20px;
+            font-size: 60px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            z-index: 2;
+            background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #0099ff, #4acfee);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: animate-gradient 3s linear infinite;
+        }
+
+        .card p {
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            color: lightgray;
+            font-size: 14px;
+            max-width: 250px;
+            z-index: 2;
+        }
+
+        .card button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 8px 20px;
+            border: 1px solid gray;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: 0.3s;
+            z-index: 2;
+        }
+
+        .card button:hover {
+            background: #edff66;
+            color: black;
+            box-shadow: 0 0 12px #edff66;
+        }
+        .contact-section{
+            position: relative;
+            width: 100%;
+            margin-top: 100px;
+            margin-bottom: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .contact-section .img1{
+            position: absolute;
+            top: 20%;
+            right: 70px;
+            height: 400px;
+            clip-path: polygon(38% 0, 100% 0, 68% 100%, 0% 100%);
+        }
+        .contact-section .img2{
+            position: absolute;
+            top: 10%;
+            left: 50px;
+            height: 200px;
+            clip-path: polygon(47% 0, 93% 6%, 100% 52%, 81% 91%, 16% 95%, 1% 54%, 10% 12%);
+        }
+        .contact-section .img3{
+            position: absolute;
+            left: 7%;
+            /* margin-top: 20px; */
+            bottom: 70px;
+            height: 250px;
+            width: 250px;
+            clip-path: polygon(22% 11%, 54% 4%, 79% 19%, 96% 52%, 71% 91%, 24% 92%, 9% 70%, 4% 38%);
+        }
+        .contact-section p{
+            margin-top: 100px;
+
+        }
+        .contact-section h1{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 70px;
+            max-width: 550px;
+            text-align: center;
+            background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #0099ff, #4acfee);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: animate-gradient 3s linear infinite;
+        }
+        .contact-section button{
+            
+            padding: 10px 25px;
+            border : 1px solid gray;
+            background-color: rgba(0, 0, 0, 0.993);
+            color: gray;
+            border-radius: 20px;
+            box-shadow: 0 0 5px lightgray;
+        }
+         .contact-section button:hover{
+            box-shadow: 0 0 15px lightgray;
+            opacity: 0.7;
+         }
+         .autoBlur{
+            animation: autoBlurAnimation linear both;
+            animation-timeline: view();
+         }
+         @keyframes autoBlurAnimation{
+            0%{
+                filter: blur(30px);
+            }
+            40%,60%{
+                filter: blur(0);
+                transform: translateY(0px);
+                opacity: 1;
+            }
+            100%{
+                filter: blur(40px);
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+         }
+         .autoTakeFull {
+  animation: autoTakeFullAnimation linear both;
+  animation-timeline: view(); /* uses full element visibility */
+  animation-range: entry 0% cover 100%; /* smoother scroll animation */
+}
+.image-box{
+     width: 360px;
+    height: 510px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+.image-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes autoTakeFullAnimation {
+  from {
+    width: 360px;
+    height: 510px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+  }
+  to {
+    width: 100%;
+    height: 100vh;
+    border-radius: 30px;
+    padding-bottom: 100px;
+  }
+}
+.autoDisplay{
+    animation: autoDisplayAnimation both;
+    animation-timeline: view(70% 5%);
+}
+@keyframes autoDisplayAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@media screen and (max-width:650px){
+    header{
+        padding: 0 10px;
+    }
+    .head-left button{
+        display: none;
+    }
+    .head-right a{
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    .hero-info{
+        left: 5%;
+    }
+    .hero-section h1{
+        font-size: 90px;
+    }
+    .next-btn{
+        left: 25%;
+        top: 45%;
+    }
+    .about-section{
+        margin: 0;
+    }
+    .about-section h1{
+        font-family: 50px;
+    }
+    .image-box {
+        width: 300px;
+        height: 500px;
+    }
+    .about-section h4, .about-section h5{
+        max-width: 350px;
+        text-align: center;
+    }
+    .contact-section .img1{
+        width: 150px;
+        height: 200px;
+        right: 10px;
+        top: 30%;
+    }
+    .contact-section .img2{
+        top: 30px;
+        left: 40px;
+        width: 180px;
+        height: 180px; 
+    }
+    .contact-section .img3{
+        left: 40px;
+        bottom: 0;
+        width: 150px;
+        height: 180px;
+    }
+    .contact-section h1{
+        font-size: 60px;
+        max-width: 300px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+        <div class="head-left">
+            <img src="logo.png" alt="">
+            <button><a href="#product">Pruduct</a></button>
+        </div>
+        <div class="head-right">
+            <p><a href="#NEXUS">NEXUS</a></p>
+            <p><a href="#VAULT">VAULT</a></p>
+            <p><a href="#about">ABOUT</a></p>
+            <p><a href="#SERVICES">SERVICES</a></p>
+            <p><a href="#contact">CONTANT</a></p>
+        </div>
+        </header>
+        <section class="hero-section autoBlur">
+            <div class="hero-vid" id="NEXUS">
+                <video loop autoplay plays-inlines class="hero-video">
+                    <source src="hero-1.mp4" type="video/mp4">
+                </video>
+                <div class="hero-info">
+                    <h1>REDEFINE</h1>
+                    <p>Enter the metagame layer Unleash the play Economy</p>
+                    <button>Watch Trailer</button>
+                </div>
+                <h1 class="gaming-text">GAMING</h1>
+                <div class="next-btn">
+                    NEXT
+                </div>
+            </div> 
+        </section>
+        <section class="about-section">
+            <div class="autoBlur">
+                <h1>DISCOVER THE WORLD'S LARGEST SHARED ADVENTURE</h1>
+            </div>
+            <p>Welcome to ZENTRY</p>
+            
+            <div class="image-box autoTakeFull" id="VAULT">
+                <img src="about.webp" alt="">
+            </div>
+            <h4>Game of Games begins-your life, now an epic MMORPG</h4>
+            <h5>ZENTRY unites every player from countless games and platforms, both digital and phisical, into </h5>
+        </section>
+
+        <section class="info-section"> 
+            <h3>Into the Metagame layer</h3>
+            <p>A cross-platform metagame app, turning your activities across web2 and web3 games a new</p>
+
+            <div class="info-card" id="product">
+                <div class="card autoDisplay">
+                    <h1>RADIANT</h1>
+                    <p>
+                        An anime and gaming-inspied NFT colletion - the IP primed for Expamsion
+                    </p>
+                    <video src="feature-1.mp4" loop autoplay muted plays-inline></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card autoDisplay">
+                    <h1>ZIGMA</h1>
+                    <p>
+                        An anime and gaming-inspied NFT colletion - the IP primed for Expamsion
+                    </p>
+                    <video src="feature-2.mp4" loop autoplay muted plays-inline></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card autoDisplay">
+                    <h1>NEXUS</h1>
+                    <p>
+                        A gamified socail hub,adding a new dimension of play to socail interaction for Web3 communities.
+                    </p>
+                    <video src="feature-3.mp4" loop autoplay muted plays-inline></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card autoDisplay" id="about">
+                    <h1>AZUL</h1>
+                    <p>
+                        A vross-world AI - elevating your gameplay to be more fun and productive
+                    </p>
+                    <video src="feature-4.mp4" loop autoplay muted plays-inline></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card autoDisplay">
+                    <video src="feature-5.mp4" loop autoplay muted plays-inline></video>
+                </div>
+                <div class="card autoDisplay">
+                    <h1>COMING SOON</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="SERVICES" >
+            <p>Join Zentry</p>
+            <div class="autoBlur">
+                <h1>LET'S BUILD THE NEW ERA OG GAMMING TOGETHER</h1>
+            </div>
+            <button id="contact">CONTACT US</button>
+            <img class="img1" src="swordman.webp" alt="">
+            <img class="img2" src="contact-1.webp" alt="">
+            <img class="img3" src="contact-2.webp" alt="">
+        </section>
+        <section class="footer" id="contact">
+            <div class="link">
+                <a href=""><i class='bx bxl-facebook' style='color:#ffffff'></i></a>
+                <a href=""><i class='bx bxl-telegram' style='color:#ffffff' ></i></a>
+                <a href=""><i class='bx bxl-github' style='color:#ffffff' ></i></a>
+                <a href=""><i class='bx bxl-instagram' style='color:#ffffff' ></i></a>
+            </div>
+            <div class="copyRight">
+                <p>©EthanDraven | Reversed 2025</p>
+            </div>
+        </section>
+    </div>
+    <script>
+        const nextButton =document.querySelector('.next-btn');
+        const video =document.querySelector('.hero-video')
+
+        const movieList = ['hero-1.mp4','hero-2.mp4','hero-3.mp4','hero-4.mp4'];
+        let index=0;
+        nextButton.addEventListener('click',function(){
+            index +=1;
+
+            video.src= movieList[index];
+            if(index === 3){
+                index=0;
+            }
+        })
+
+    </script>
+</body>
+</html>
